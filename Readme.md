@@ -1,3 +1,6 @@
+Clothing Brand E-Commerce Website
+This project is the development of a full-fledged e-commerce website for a clothing brand, inspired by popular Pakistani clothing brand Bonanza Satrangi. The website will offer a seamless online shopping experience for users, allowing them to browse a wide variety of clothing products, view detailed information, and easily make purchases.
+
 Key Features:
 User Authentication: Secure login and signup system allowing customers to create and manage their accounts. Users will also be able to view their order history and save favorite items.
 
