@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qalam-Unstitched</title>
+</head>
+
+<body>
+    <h1>All Unstitched Dresses</h1>
+    <p>
+        <% for (const Unstitched of allUnstitched) { %>
+            <div>
+                <img src="<%= Unstitched.image %>" alt="Dress">
+                <p> Title: <%= Unstitched.title %>
+                </p>
+                <p> Price &#8360; <%= Unstitched.price.toLocaleString("en-IN") %>
+                </p>
+                <p> Color: <%= Unstitched.color %>
+                </p>
+
+                <p>
+                <h3>About</h3>
+                <% Unstitched.about.forEach(data=> { %>
+                    <p><strong>Description:</strong>
+                        <%= data.description %>
+                    </p>
+                    <p><strong>Shirt:</strong>
+                        <%= data.Shirt %>
+                    </p>
+                    <% if (data.Dupatta) { %>
+                        <p><strong>Dupatta:</strong>
+                            <%= data.Dupatta %>
+                        </p>
+                        <% } %>
+                            <p><strong>Trouser:</strong>
+                                <%= data.trouser %>
+                            </p>
+                            <% }) %>
+
+                                <p> Disclaimer: <%= Unstitched.disclaimer %>
+                                </p>
+            </div>
+            <% } %>
+    </p>
+</body>
+
+</html>

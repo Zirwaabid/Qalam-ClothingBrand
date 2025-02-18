@@ -15,6 +15,9 @@ app.use(express.static(path.join(__dirname, "public")));
 const methodOverride = require("method-override");
 app.use(methodOverride("_method"))
 
+// require all models 
+const Unstitched = require("./models/Unstitched.js");
+
 // require and setting for mongoose 
 const mongoose = require("mongoose");
 let mongo_url = "mongodb://127.0.0.1:27017/Qalam";
@@ -26,6 +29,16 @@ main().then(() => {
 async function main() {
     await mongoose.connect(mongo_url);
 };
+
+// home page
+app.get("/qalam", async(req, res) => {
+    res.render("listings/index.ejs");
+})
+// Unstitched page
+app.get("/qalam/unstitched",async(req,res)=>{
+    const allUnstitched = await Unstitched.find({});
+    res.render("listings/unstitched.ejs", { allUnstitched });
+})
 
 app.listen("8080", () => {
     console.log("server is listening on port 8080");
