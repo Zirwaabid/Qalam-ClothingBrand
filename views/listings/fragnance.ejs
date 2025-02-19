@@ -1,0 +1,31 @@
+<% layout("/layouts/boilerplate.ejs") %>
+    <h1>Fragnances</h1>
+    <p>
+        <% for (const fragnance of allFragnances) { %>
+            <div>
+                <img src="<%= fragnance.image %>" alt="Dress">
+                <p> Title: <%= fragnance.title %>
+                </p>
+                <p> Price &#8360; <%= fragnance.price.toLocaleString("en-IN") %>
+                </p>
+                <p> Size: <%= fragnance.size %>
+                </p>
+                <p>
+                <h3>About</h3>
+                <% fragnance.about.forEach(data=> { %>
+                    <p><strong>Top:</strong>
+                        <%= data.top %>
+                    </p>
+                    <p><strong>Heart:</strong>
+                        <%= data.heart %>
+                    </p>
+                    <p><strong>Base:</strong>
+                        <%= data.base %>
+                    </p>
+                    <% }) %>
+
+                        <p> Disclaimer: <%= fragnance.disclaimer %>
+                        </p>
+            </div>
+            <% } %>
+    </p>

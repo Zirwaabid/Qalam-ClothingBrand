@@ -1,0 +1,34 @@
+<% layout("/layouts/boilerplate.ejs") %>
+    <h1>Ready To Wear</h1>
+    <p>
+        <% for (const stitched of allstitched) { %>
+            <div>
+                <img src="<%= stitched.image %>" alt="Dress">
+                <p> Title: <%= stitched.title %>
+                </p>
+                <p> Price &#8360; <%= stitched.price.toLocaleString("en-IN") %>
+                </p>
+                <p> Size: <%= stitched.size %>
+                </p>
+                <p> Color: <%= stitched.color %>
+                </p>
+
+                <p>
+                <h3>About</h3>
+                <% stitched.about.forEach(data=> { %>
+                    <p><strong>Description:</strong>
+                        <%= data.description %>
+                    </p>
+                    <p><strong>Shirt:</strong>
+                        <%= data.Shirt %>
+                    </p>
+                    <p><strong>Trouser:</strong>
+                        <%= data.trouser %>
+                    </p>
+                    <% }) %>
+
+                        <p> Disclaimer: <%= stitched.disclaimer %>
+                        </p>
+            </div>
+            <% } %>
+    </p>

@@ -1,0 +1,21 @@
+<% layout("/layouts/boilerplate.ejs") %>
+    <h1>Beauty Products</h1>
+    <p>
+        <% for (const beauty of allBeauty) { %>
+            <div>
+                <img src="<%= beauty.image %>" alt="Dress">
+                <p> Title: <%= beauty.title %>
+                </p>
+                <p> Price &#8360; <%= beauty.price.toLocaleString("en-IN") %>
+                </p>
+                <p> Color: <%= beauty.color %>
+                </p>
+                <h3>About</h3>
+                <p> About: <%= beauty.about %>
+                </p>
+
+                <p> Disclaimer: <%= beauty.disclaimer %>
+                </p>
+            </div>
+            <% } %>
+    </p>
