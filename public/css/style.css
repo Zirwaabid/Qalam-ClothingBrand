@@ -5,14 +5,17 @@
     left: 0;
     width: 100%;
     height: 100vh;
+    background-color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
-    background-color: black;
-    /* Fallback color */
     z-index: 1000;
-    transition: all 0.8s ease-in-out;
+    transition: 1s ease;
+}
+
+.brand-intro.fade-out {
+    opacity: 0;
+    visibility: hidden;
 }
 
 #brand-bg {
@@ -26,20 +29,19 @@
 
 /* Large logo at the beginning */
 #brand-title {
-    font-size: 10rem;
+    font-size: 18rem;
     font-weight: bold;
-    color: white;
+    color: rgb(223, 221, 221);
     /* Ensure visibility */
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
     /* Subtle shadow for readability */
     transition: all 0.8s ease-in-out;
 }
 
-/* Navbar logo (hidden initially) */
 #navbar-logo {
-    font-size: 24px;
+    font-size: 27px;
     font-weight: bold;
-    opacity: 0;
+    opacity: 1;
     transition: all 0.8s ease-in-out;
 }
 
@@ -52,10 +54,16 @@
 .scrolled #navbar-logo {
     opacity: 1;
 }
- 
-/* automatically changing img  */
+
+
+/* automatically changing images  */
 .carousel-item img {
-    height: 500px; /* Adjust to your preferred height */
+    height: 400px;
+    /* Adjust to your preferred height */
     object-fit: cover;
-  }
-  
+}
+ /* front page card  */
+.card-img-top {
+    height: 400px; /* Set fixed height */
+    object-fit: cover; /* Ensures the image fills the space */
+}
